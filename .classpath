@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="lib" path="lib/apache-mime4j-0.6.jar"/>
+	<classpathentry kind="lib" path="lib/bsh-1.3.0.jar"/>
+	<classpathentry kind="lib" path="lib/cglib-nodep-2.1_3.jar"/>
+	<classpathentry kind="lib" path="lib/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-exec-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-jxpath-1.3.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang3-3.2.1.jar" sourcepath="C:/Users/test/.m2/repository/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1-sources.jar"/>
+	<classpathentry kind="lib" path="lib/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="lib/hamcrest-library-1.3.jar"/>
+	<classpathentry kind="lib" path="lib/ini4j-0.5.2.jar"/>
+	<classpathentry kind="lib" path="lib/jcommander-1.29.jar"/>
+	<classpathentry kind="lib" path="lib/jetty-websocket-8.1.8.jar"/>
+	<classpathentry kind="lib" path="lib/jna-3.4.0.jar"/>
+	<classpathentry kind="lib" path="lib/jna-platform-3.4.0.jar"/>
+	<classpathentry kind="lib" path="lib/json-20080701.jar"/>
+	<classpathentry kind="lib" path="lib/junit-dep-4.11.jar" sourcepath="lib/junit-4.11-src.jar"/>
+	<classpathentry kind="lib" path="lib/netty-3.5.7.Final.jar"/>
+	<classpathentry kind="lib" path="lib/protobuf-java-2.4.1.jar"/>
+	<classpathentry kind="lib" path="lib/sac-1.3.jar"/>
+	<classpathentry kind="lib" path="lib/serializer-2.7.1.jar"/>
+	<classpathentry kind="lib" path="lib/xalan-2.7.1.jar"/>
+	<classpathentry kind="lib" path="lib/xml-apis-1.4.01.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="lib/poi-3.9-20121203.jar"/>
+	<classpathentry kind="lib" path="lib/poi-examples-3.9-20121203.jar"/>
+	<classpathentry kind="lib" path="lib/poi-excelant-3.9-20121203.jar"/>
+	<classpathentry kind="lib" path="lib/poi-ooxml-3.9-20121203.jar"/>
+	<classpathentry kind="lib" path="lib/poi-ooxml-schemas-3.9-20121203.jar"/>
+	<classpathentry kind="lib" path="lib/poi-scratchpad-3.9-20121203.jar"/>
+	<classpathentry kind="lib" path="lib/xmlbeans-2.3.0.jar"/>
+	<classpathentry kind="lib" path="lib/testng-6.8.5.jar"/>
+	<classpathentry kind="lib" path="lib/abdera-1.1.3.jar" sourcepath="C:/Users/IBM_ADMIN/.m2/repository/org/apache/abdera/abdera-bundle/1.1.3/abdera-bundle-1.1.3-sources.jar"/>
+	<classpathentry kind="lib" path="lib/commons-httpclient-3.1.jar"/>
+	<classpathentry kind="lib" path="lib/axiom-api-1.2.10.jar"/>
+	<classpathentry kind="lib" path="lib/cssparser-0.9.11.jar"/>
+	<classpathentry kind="lib" path="lib/dom4j-2.0.0-ALPHA-2.jar"/>
+	<classpathentry kind="lib" path="lib/guava-15.0.jar"/>
+	<classpathentry kind="lib" path="lib/jaxen-1.1-beta-6.jar"/>
+	<classpathentry kind="lib" path="lib/nekohtml-1.9.19.jar"/>
+	<classpathentry kind="lib" path="lib/operadriver-1.5.jar"/>
+	<classpathentry kind="lib" path="lib/phantomjsdriver-1.1.0.jar"/>
+	<classpathentry kind="lib" path="lib/selenium-java-2.42.2.jar"/>
+	<classpathentry kind="lib" path="lib/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="lib/icu4j-53_1.jar" sourcepath="lib/icu4j-53_1-src.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/GVTAutomation/lib/icu4j-53_1-docs.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/commons-codec-1.9.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.1.3.jar"/>
+	<classpathentry kind="lib" path="lib/htmlunit-2.14.jar"/>
+	<classpathentry kind="lib" path="lib/htmlunit-core-js-2.14.jar"/>
+	<classpathentry kind="lib" path="lib/httpclient-4.3.2.jar"/>
+	<classpathentry kind="lib" path="lib/httpcore-4.3.1.jar"/>
+	<classpathentry kind="lib" path="lib/httpmime-4.3.2.jar"/>
+	<classpathentry kind="lib" path="lib/xercesImpl-2.11.0.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>

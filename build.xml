@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<project basedir="." default="dist">
+	<property environment="env" />
+	<property name="target.dir" value="./target" />
+	<property name="dist.dir" value="${target.dir}/dist" />
+	<property name="dist.pack.dir" location="${target.dir}" />
+	<property name="dist.pack" value="testgui" />
+	<tstamp/>
+	<property name="dist.pack.name" value="${dist.pack}_${DSTAMP}.zip" />
+	<property name="dist.pack.file" location="${dist.pack.dir}/${dist.pack.name}" />
+
+	<property name="testgui.home" value="." />
+	<property name="testgui.src" value="${testgui.home}/src" />
+	<property name="testgui.lib" value="${testgui.home}/lib" />
+	<property name="testgui.classes" value="${target.dir}/classes" />
+	
+	<path id="testgui.classpath">
+		<fileset dir="${testgui.lib}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<target name="init">
+		<mkdir dir="${testgui.classes}" />
+		<copy includeemptydirs="false" todir="${testgui.classes}">
+			<fileset dir="${testgui.src}">
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="compile" depends="init">
+		<javac destdir="${testgui.classes}" debug="on" source="1.6" target="1.6" encoding="utf-8" includeantruntime="false">
+			<src path="${testgui.src}"/>
+			<classpath refid="testgui.classpath"/>
+		</javac>
+	</target>
+
+	<target name="clean">
+		<delete dir="${target.dir}"/>
+	</target>
+	
+	<target name="dist" depends="compile">
+		<mkdir dir="${dist.dir}/lib" />
+		<jar destfile="${dist.dir}/lib/testgui.jar" basedir="${testgui.classes}" />
+		<copy todir="${dist.dir}/data">
+			<fileset dir="${testgui.home}/data" />
+		</copy>
+		<copy todir="${dist.dir}/lib">
+			<fileset dir="${testgui.home}/lib" />
+		</copy>
+		<copy todir="${dist.dir}/drivers">
+			<fileset dir="${testgui.home}/drivers" />
+		</copy>
+		<copy todir="${dist.dir}/bin">
+			<fileset dir="${testgui.home}/bin" />
+		</copy>
+		<copy todir="${dist.dir}/config">
+			<fileset dir="${testgui.home}/config" />
+		</copy>
+
+		<zip destfile="${dist.pack.file}">
+			<zipfileset dir="${dist.dir}" filemode="751"/>
+		</zip>
+	</target>
+
+	<target name="deploy" depends="dist">
+		<property name="remote.host" value="concordla.cn.ibm.com"/>
+		<property name="remote.repos" value="/var/www/html/testcode"/>
+		<property name="remote.user" value="root"/>
+		<property name="remote.password" value="sun5kong"/>			
+		<scp file="${dist.pack.file}" todir="${remote.user}@${remote.host}:${remote.repos}" password="${remote.password}" trust="yes" />
+		<sshexec command="rm -rf ${remote.repos}/${dist.pack}_${DSTAMP}" host="${remote.host}" username="${remote.user}" password="${remote.password}" trust="yes" />
+		<sshexec command="unzip ${remote.repos}/${dist.pack.name} -d ${remote.repos}/${dist.pack}_${DSTAMP}" host="${remote.host}" username="${remote.user}" password="${remote.password}" trust="yes" />
+		<sshexec command="rm -f ${remote.repos}/${dist.pack}" host="${remote.host}" username="${remote.user}" password="${remote.password}" trust="yes" />
+		<sshexec command="ln -fs ${remote.repos}/${dist.pack}_${DSTAMP} ${remote.repos}/${dist.pack}" host="${remote.host}" username="${remote.user}" password="${remote.password}" trust="yes" />
+			
+	</target>
+
+	<target name="bootstrap" description="Prepare Jars">
+		<mkdir dir="${user.home}/.ant/lib"/>
+		<get src="http://repo1.maven.org/maven2/com/jcraft/jsch/0.1.50/jsch-0.1.50.jar" dest="${user.home}/.ant/lib/jsch.jar"/>
+	</target>
+
+</project>

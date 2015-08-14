@@ -1,0 +1,16 @@
+<style>
+	table{font-size:12px}
+</style>
+<div><input type="checkbox" onclick="filter(this)" value="INFO" checked="checked"/>INFO<input type="checkbox" onclick="filter(this)" value="DEBUG"  checked="checked"//>DEBUG<input type="checkbox" onclick="filter(this)"  value="ERROR"  checked="checked"//>ERROR</div>
+<script>
+function filter(checkbox) {
+	var rows = document.getElementsByTagName('tr');
+	for (var i = 1; i < rows.length; i++) {
+		row = rows[i];
+		var level = row.cells[2];
+        if (level.textContent.indexOf(checkbox.value) >= 0) {
+        	row.style.display = checkbox.checked ? "" : "none";
+        }
+	}
+}
+</script>
